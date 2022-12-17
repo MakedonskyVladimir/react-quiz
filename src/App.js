@@ -1,4 +1,5 @@
 import './App.css';
+import Result from './components/Result/Result';
 
 const questions = [
   {
@@ -21,7 +22,7 @@ const questions = [
 const App = () => {
   return (
     <>
-      <h1>{questions[0].title}</h1>
+      <Result />
     </>
   )
 
