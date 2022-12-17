@@ -1,4 +1,6 @@
 import './App.css';
+import React from 'react';
+import Game from './components/Game/Game';
 import Result from './components/Result/Result';
 
 const questions = [
@@ -20,9 +22,13 @@ const questions = [
 ]
 
 const App = () => {
+  const [page, setPage] = React.useState(true)
+
   return (
     <>
-      <Result />
+      <button onClick={() => setPage (!page)}>???</button>
+      {page && <Game />}
+      {!page && <Result />}
     </>
   )
 
