@@ -23,11 +23,12 @@ const questions = [
 
 const App = () => {
   const [page, setPage] = React.useState(true)
+  const [step, setStep] = React.useState(0)
 
   return (
     <>
       <button onClick={() => setPage (!page)}>???</button>
-      {page && <Game questions = {questions}/>}
+      {page && <Game questions = {questions} step={step}/>}
       {!page && <Result />}
     </>
   )

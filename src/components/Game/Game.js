@@ -5,12 +5,12 @@ const Game = (props) => {
         <div>
             <div>прогресс-бар</div>
             <h1>Ответь на вопросы:</h1>
-            <h2>{props.questions[0].title}</h2>
+            <h2>вопрос № {props.step}</h2>
+            <h2>{props.questions[props.step].title}</h2>
             <ul>
-                <li></li>
-                <li>2 ответ</li>
-                <li>3 ответ</li>
-                <li>4 ответ</li>
+                <li>{props.questions[0].variants[0]}</li>
+                <li>{props.questions[0].variants[1]}</li>
+                <li>{props.questions[0].variants[2]}</li>
             </ul>
 
 
