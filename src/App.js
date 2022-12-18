@@ -5,7 +5,7 @@ import Result from './components/Result/Result';
 
 const questions = [
   {
-    title: 'Реакт - это ...?', 
+    title: 'Реакт - это ........?', 
     variants: ['библиотека', 'фреймворк', 'приложение'], 
     correct: 0,
   }, 
@@ -27,7 +27,7 @@ const App = () => {
   return (
     <>
       <button onClick={() => setPage (!page)}>???</button>
-      {page && <Game />}
+      {page && <Game questions = {questions}/>}
       {!page && <Result />}
     </>
   )
