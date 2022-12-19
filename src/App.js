@@ -40,32 +40,39 @@ const Game = ({question, onCliclVariant, step}) => {
 
 }
 
-const Result = () => {
+const Result = ({correct}) => {
   return (
     <div className='result'>
       {/* <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png"/>       */}
-      <h2>Результат 5 из 10...</h2>
-      <button>Попробовать еще...</button>
+      <h2>Правильно: {correct} из {questions.length}</h2>
+      <a href='/'>
+        <button>Попробовать еще...</button>
+      </a>
   </div>
   )
 }
 
 const App = () => {
   const [step, setStep] = React.useState(0)
+  const [correct, setCorrect] = React.useState(0)
   const question = questions[step]
 
   const onCliclVariant = (index) => {
     console.log(step, index);
     setStep(step + 1);
+    if (index === question.correct) {
+      setCorrect(correct + 1)
+    }
   }
 
   return (
     <div className='App'>
       {
-        step != questions.length ? <Game step={step} question={question} onCliclVariant={onCliclVariant}/> : <Result />
-
-      }
-      
+        step != questions.length ? (
+          <Game step={step} question={question} onCliclVariant={onCliclVariant}/>
+          ) : (
+          <Result correct={correct}/>
+          )}
     </div>
   )
 
