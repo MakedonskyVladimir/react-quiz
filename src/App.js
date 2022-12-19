@@ -19,14 +19,19 @@ const questions = [
   }, 
 ]
 
-const Game = () => {
+const Game = ({question}) => {
   return (
     <div>
-    <div>прогресс-бар</div>
-    <h3>вопрос № 1</h3>
-    <h4>вариант ответа 1</h4>
-    <h4>вариант ответа 2</h4>
-    <h4>вариант ответа 3</h4>
+      <div className='progress'>
+        <div style={{width: '50%'}} className="progress_inner">-------прогресс-бар-------</div>
+      </div>
+      <h3>{question.title}</h3>
+      <ul>
+        {
+          question.variants.map((text) => (
+            <li key={text}>{text}</li>
+          ))}
+      </ul>
   </div>
   )
 
@@ -34,23 +39,23 @@ const Game = () => {
 
 const Result = () => {
   return (
-    <div>
-    <h1>Результат 5 из 10...</h1>
-    <button>Попробовать еще...</button>
+    <div className='result'>
+      <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png" width="200px"/>      <h1>Результат 5 из 10...</h1>
+      <button>Попробовать еще...</button>
   </div>
   )
 
 }
 
 const App = () => {
-  const [page, setPage] = React.useState(false)
+  const [step, setStep] = React.useState(0)
+  const question = questions[step]
 
   return (
-    <>
-      <button onClick={() => setPage (!page)}>???</button>
-      <Game />
+    <div className='App'>
+      <Game question={question}/>
       <Result />
-    </>
+    </div>
   )
 
 }
