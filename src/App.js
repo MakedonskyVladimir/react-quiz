@@ -61,8 +61,11 @@ const App = () => {
 
   return (
     <div className='App'>
-      <Game step={step} question={question} onCliclVariant={onCliclVariant}/>
-      <Result />
+      {
+        step != questions.length ? <Game step={step} question={question} onCliclVariant={onCliclVariant}/> : <Result />
+
+      }
+      
     </div>
   )
 
