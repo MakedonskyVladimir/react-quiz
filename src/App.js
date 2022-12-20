@@ -3,25 +3,109 @@ import React from 'react';
 
 const questions = [
   {
-    title: 'Реакт - это ........?', 
-    variants: ['библиотека', 'фреймворк', 'приложение'], 
+    title: 'black', 
+    variants: ['черный', 'коричневый', 'розовый'], 
     correct: 0,
-  }, 
+  },
   {
-    title: 'Компонент - это ...?', 
-    variants: ['приложение', 'часть приложения', 'сайт'], 
-    correct: 1,
-  }, 
-  {
-    title: 'JSX - это', 
-    variants: ['библиотека', 'фреймворк', 'приложение'], 
+    title: 'pink', 
+    variants: ['коричневый', 'черный', 'розовый'], 
     correct: 2,
-  }, 
+  },
+  {
+    title: 'yellow', 
+    variants: ['розовый', 'желтый', 'зеленый'], 
+    correct: 1,
+  },
+  {
+    title: 'white', 
+    variants: ['желтый', 'зеленый', 'белый'], 
+    correct: 2,
+  },
+  {
+    title: 'green', 
+    variants: ['зеленый', 'коричневый', 'красный'], 
+    correct: 0,
+  },
+  {
+    title: 'blue', 
+    variants: ['черный', 'синий', 'желтый'], 
+    correct: 1,
+  },
+  {
+    title: "давай", 
+    variants: ['come in', "let's", 'it is'], 
+    correct: 1,
+  },
+  {
+    title: 'school', 
+    variants: ['портфель', 'ручка', 'школа'], 
+    correct: 2,
+  },
+  {
+    title: 'bag', 
+    variants: ['ручка', 'сумка', 'линейка'], 
+    correct: 1,
+  },
+  {
+    title: 'pen', 
+    variants: ['линейка', 'карандаш', 'ручка'], 
+    correct: 2,
+  },
+  {
+    title: 'ruler', 
+    variants: ['стерка', 'линейка', 'карандаш'], 
+    correct: 1,
+  },
+  {
+    title: 'пенал', 
+    variants: ['pen', 'pencil', 'pencil box'], 
+    correct: 2,
+  },
+  {
+    title: '11', 
+    variants: ['eleven', 'thirteen', 'twelwe'], 
+    correct: 0,
+  },
+  {
+    title: 'listen', 
+    variants: ['слушай', 'смотри', 'сиди'], 
+    correct: 0,
+  },
+  {
+    title: 'Math', 
+    variants: ['география', 'математика', 'история'], 
+    correct: 1,
+  },
+  {
+    title: 'история', 
+    variants: ['English', 'Geography', 'History'], 
+    correct: 2,
+  },
+  {
+    title: 'Музыка', 
+    variants: ['Geography', 'Music', 'Maths'], 
+    correct: 1,
+  },
+  {
+    title: 'look', 
+    variants: ['читай', 'смотри', 'уйди'], 
+    correct: 1,
+  },
+  {
+    title: 'треугольник', 
+    variants: ['circle', 'square', 'triangle'], 
+    correct: 2,
+  },
+  {
+    title: 'her', 
+    variants: ['его', 'ее', 'нам'], 
+    correct: 1,
+  },
 ]
 
 const Game = ({question, onCliclVariant, step}) => {
   const percentage = Math.round ((step / questions.length) * 100)
-  console.log(percentage)
 
   return (
     <div>
@@ -58,7 +142,6 @@ const App = () => {
   const question = questions[step]
 
   const onCliclVariant = (index) => {
-    console.log(step, index);
     setStep(step + 1);
     if (index === question.correct) {
       setCorrect(correct + 1)
