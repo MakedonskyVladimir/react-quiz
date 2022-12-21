@@ -1,5 +1,7 @@
 import './App.css';
 import React from 'react';
+import Game from './components/Game/Game';
+import Result from './components/Result/Result';
 
 const questions = [
   {
@@ -104,37 +106,9 @@ const questions = [
   },
 ]
 
-const Game = ({question, onCliclVariant, step}) => {
-  const percentage = Math.round ((step / questions.length) * 100)
 
-  return (
-    <div>
-      <div className='progress'>
-        <div style={{width: `${percentage}%`}} className="progressinner"></div>
-      </div>
-      <h1>{question.title}</h1>
-      <ul>
-        {
-          question.variants.map((variant, index) => (
-            <li onClick={() => onCliclVariant(index)} key={index}>{variant}</li>
-          ))}
-      </ul>
-    </div>
-  )
 
-}
 
-const Result = ({correct}) => {
-  return (
-    <div className='result'>
-      {/* <img src="https://cdn-icons-png.flaticon.com/512/2278/2278992.png"/>       */}
-      <h2>Правильно: {correct} из {questions.length}</h2>
-      <a href='/'>
-        <button>Попробовать еще...</button>
-      </a>
-  </div>
-  )
-}
 
 const App = () => {
   const [step, setStep] = React.useState(0)
